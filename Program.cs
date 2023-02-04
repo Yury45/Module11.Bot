@@ -47,7 +47,7 @@ namespace Module11.Bot
         {
             return new AppSettings()
             {
-                BotToken = ""
+                BotToken = "5081119124:AAEZyY4TeNfjOt6XWHLFcwaAocExMYgPNX0"
             };
         }
     }
