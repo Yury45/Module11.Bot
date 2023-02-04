@@ -18,9 +18,8 @@ namespace Module11.Bot.Controllers
 
         internal async Task Handle(CallbackQuery? callbackQuery, CancellationToken ct)
         {
-            if(callbackQuery.Data == null) return;
-
-            ((IStorage)_memoryStirage).GetSession(callbackQuery.From.Id).Position = callbackQuery.Data;
+            if(callbackQuery.Data == null) return; 
+            _memoryStirage.GetSession(callbackQuery.From.Id).Position = callbackQuery.Data;
             await _telegramBotClient.SendTextMessageAsync(callbackQuery.From.Id, $"Выбран режим - {callbackQuery.Data}", cancellationToken: ct);
         }
     }
